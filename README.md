@@ -7,6 +7,7 @@ just some config
 
 ## Setup
 
+* Clone this repo into /.config/nvim
 * Install neovim
 * Clone packer
 * :so packer.lua and :PackerSync
