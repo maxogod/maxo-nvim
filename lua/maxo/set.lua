@@ -1,28 +1,27 @@
 
+-- line numbers
 vim.opt.nu = true
-vim.opt.relativenumber = false
 
+-- tabs
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+-- tabs to spaces
 vim.opt.expandtab = true
 
+-- adjust indentation based on syntax
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+-- wrapping
+vim.opt.wrap = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undofile = true
-
-
+-- search settings      
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- allow 24-bit colors  
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
-vim.opt.isfname:append("@-@")
+-- time after which the CursorHold autocommand is triggered
 vim.opt.updatetime = 50
-
 
