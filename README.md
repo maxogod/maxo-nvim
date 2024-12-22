@@ -8,9 +8,17 @@ just some config
 ## Setup
 
 * Clone this repo into /.config/nvim (different for windows)
-* Install neovim
-* Clone packer
+* Install neovim with snap (>= 0.10.0)
+* Clone packer (https://github.com/wbthomason/packer.nvim)
 * :so packer.lua and :PackerSync
 * :Mason for lsps and linters
 * :checkhealth for troubleshooting
 * add font in font/ to ~/.local/share/fonts and set it for the terminal to be able to see sidebar icons
+
+Add alias for nvim:
+```bash
+nvim ~/.bashrc
+# type `alias vim='nvim'` at the end of the file
+source ~/.bashrc
+```
+
