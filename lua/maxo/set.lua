@@ -13,7 +13,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- wrapping
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 -- search settings      
 vim.opt.hlsearch = false
