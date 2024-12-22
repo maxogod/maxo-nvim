@@ -13,3 +13,4 @@ just some config
 * :so packer.lua and :PackerSync
 * :Mason for lsps and linters
 * :checkhealth for troubleshooting
+* add font in font/ to ~/.local/share/fonts and set it for the terminal to be able to see sidebar icons

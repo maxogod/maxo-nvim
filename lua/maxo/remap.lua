@@ -1,8 +1,13 @@
 -- leader
 vim.g.mapleader = " "
 
--- Explore
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+-- Explore without nvim tree
+-- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+
+-- Toggle the file explorer
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+-- Set a keybinding to focus back on NvimTree
+vim.api.nvim_set_keymap('n', '<leader>b', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
 
 -- Move line up and down
 vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv")
@@ -18,6 +23,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- Copy into system clipboard
 vim.keymap.set("v", "<leader>y", [["+y]])
+-- Cut into system clipboard
+vim.keymap.set("v", "<leader>x", [["+x]])
 
 -- Undo - Redo
 vim.keymap.set("n", "<C-z>", "<Cmd>u<CR>")
@@ -33,4 +40,3 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
-
