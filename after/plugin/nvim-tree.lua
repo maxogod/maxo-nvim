@@ -1,3 +1,5 @@
+-- Sidebar file explorer
+
 require("nvim-tree").setup({
     -- Automatically open the tree when opening Neovim
     hijack_directories = {

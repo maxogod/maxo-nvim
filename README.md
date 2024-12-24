@@ -8,7 +8,7 @@ just some config
 ## Setup
 
 * Clone this repo into /.config/nvim (different for windows)
-* Install neovim with snap (>= 0.10.0)
+* Install neovim **>= 0.10.0** (i had to use *snap*)
 * Clone packer (https://github.com/wbthomason/packer.nvim)
 * :so packer.lua and :PackerSync
 * :Mason for lsps and linters
@@ -21,4 +21,8 @@ nvim ~/.bashrc
 # type `alias vim='nvim'` at the end of the file
 source ~/.bashrc
 ```
+
+## Additional setup 
+
+Also install tree-sitter-cli locally
 
