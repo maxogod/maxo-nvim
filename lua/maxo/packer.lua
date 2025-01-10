@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
@@ -34,13 +34,23 @@ return require('packer').startup(function(use)
     -- Show git status, diff, etc (:G <command>)
     use('tpope/vim-fugitive')
 
+    -- Multiple cursors
+    use {
+        'mg979/vim-visual-multi'
+    }
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
+            {
+                'williamboman/mason.nvim',
+                opts = {
+                    ensure_installed = 'gopls'
+                }
+            },
             { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
