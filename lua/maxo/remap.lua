@@ -58,6 +58,9 @@ vim.keymap.set("n", "<C-S-Down>", "yyp")
 vim.keymap.set('n', '<A-S-Up>', '<Plug>(VM-Add-Cursor-Up)', { desc = "Add cursor up" })
 vim.keymap.set('n', '<A-S-Down>', '<Plug>(VM-Add-Cursor-Down)', { desc = "Add cursor down" })
 
+-- Commenting
+vim.api.nvim_set_keymap('v', '<leader>/', ':Commentary<CR>', { noremap = true, silent = true })
+
 -- create tab
 vim.keymap.set('n', '<leader>t', ':tabnew<CR>')
 

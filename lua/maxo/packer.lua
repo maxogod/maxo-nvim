@@ -39,6 +39,9 @@ return require('packer').startup(function(use)
         'mg979/vim-visual-multi'
     }
 
+    -- Commenting
+    use 'tpope/vim-commentary'
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
