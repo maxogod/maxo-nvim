@@ -1,8 +1,15 @@
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") });
+-- Telescope setup
+require('telescope').setup {
+  defaults = {
+    file_ignore_patterns = { "node_modules", ".git" },
+    layout_config = {
+      horizontal = { preview_width = 0.6 },
+    },
+  },
+}
 
-end)
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 

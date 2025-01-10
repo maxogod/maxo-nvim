@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 -- Explore without nvim tree
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
--- Toggle the file explorer
+-- Toggle the file explorer (nvim tree)
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 -- Set a keybinding to focus back on NvimTree
 vim.api.nvim_set_keymap('n', '<leader>b', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
@@ -40,3 +40,31 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- Move between tabs
+vim.keymap.set("n", "<A-Right>", ":tabnext<CR>")
+vim.keymap.set("n", "<A-Left>", ":tabprevious<CR>")
+
+-- Move to specific tab 
+for i = 1, 9 do
+  vim.keymap.set("n", "<leader>"..i, ":tabnext " .. i .. "<CR>")
+end
+
+-- Duplicate the current line
+vim.keymap.set("n", "<C-S-Up>", "yyp")
+vim.keymap.set("n", "<C-S-Down>", "yyp")
+
+-- Multicursor
+vim.keymap.set('n', '<A-S-Up>', '<Plug>(VM-Add-Cursor-Up)', { desc = "Add cursor up" })
+vim.keymap.set('n', '<A-S-Down>', '<Plug>(VM-Add-Cursor-Down)', { desc = "Add cursor down" })
+
+-- create tab
+vim.keymap.set('n', '<leader>t', ':tabnew<CR>')
+
+-- Nvim command to close everything
+vim.api.nvim_create_user_command('Shutdown', function()
+  vim.cmd('tabnew')
+  vim.cmd('tabonly')
+  vim.cmd('quit')
+end, {})
+

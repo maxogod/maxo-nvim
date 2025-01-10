@@ -25,4 +25,7 @@ source ~/.bashrc
 ## Additional setup 
 
 Also install tree-sitter-cli locally
+and ripgrep
 
+TODO:
+add a help file to be displayed on leader + h
