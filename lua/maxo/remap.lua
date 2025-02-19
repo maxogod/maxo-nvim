@@ -1,21 +1,25 @@
 -- leader
 vim.g.mapleader = " "
 
+-- Help
+vim.keymap.set("n", "<leader>h", function()
+  local config_path = vim.fn.stdpath("config") .. "/help.md"
+  vim.cmd("!" .. "cat " .. config_path)
+end, { noremap = true, silent = true })
+
 -- Explore without nvim tree
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- Toggle the file explorer (nvim tree)
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
--- Set a keybinding to focus back on NvimTree
-vim.api.nvim_set_keymap('n', '<leader>b', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
 
 -- Move line up and down
 vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv")
 
--- Scroll up and down
-vim.keymap.set("n", "<C-S-Up>", "<C-u>zz")
-vim.keymap.set("n", "<C-S-Down>", "<C-d>zz")
+-- -- Scroll up and down
+-- vim.keymap.set("n", "<C-S-Up>", "<C-u>zz")
+-- vim.keymap.set("n", "<C-S-Down>", "<C-d>zz")
 
 -- next and prev when searching patterns
 vim.keymap.set("n", "n", "nzzzv")
