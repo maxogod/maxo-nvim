@@ -2,9 +2,7 @@
 
 My config for my nvim text editor! B)
 
-<div align="center">
-  <img src="https://i.pinimg.com/originals/86/70/c4/8670c4da3a580725b13a12ac86808bce.png" width="220px" height="300" alt="Pokemon trainer using PC">
-</div>
+![maxonvim home](https://github.com/user-attachments/assets/ea35fe87-87d6-44d7-a0cf-ad242b95ff23)
 
 ## Setup
 
