@@ -42,6 +42,12 @@ return require('packer').startup(function(use)
     -- Commenting
     use 'tpope/vim-commentary'
 
+    -- Autoclosing brackets
+    use 'jiangmiao/auto-pairs'
+
+    -- rainbow brackets (needs tree-sitter)
+    use 'p00f/nvim-ts-rainbow'
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
