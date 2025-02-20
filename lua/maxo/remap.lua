@@ -3,8 +3,8 @@ vim.g.mapleader = " "
 
 -- Help
 vim.keymap.set("n", "<leader>h", function()
-  local config_path = vim.fn.stdpath("config") .. "/help.md"
-  vim.cmd("!" .. "cat " .. config_path)
+    local config_path = vim.fn.stdpath("config") .. "/help.md"
+    vim.cmd("!" .. "cat " .. config_path)
 end, { noremap = true, silent = true })
 
 -- Explore without nvim tree
@@ -49,9 +49,9 @@ end)
 vim.keymap.set("n", "<A-Right>", ":tabnext<CR>")
 vim.keymap.set("n", "<A-Left>", ":tabprevious<CR>")
 
--- Move to specific tab 
+-- Move to specific tab
 for i = 1, 9 do
-  vim.keymap.set("n", "<leader>"..i, ":tabnext " .. i .. "<CR>")
+    vim.keymap.set("n", "<leader>" .. i, ":tabnext " .. i .. "<CR>")
 end
 
 -- Duplicate the current line
@@ -74,8 +74,7 @@ vim.api.nvim_set_keymap('i', '<C-Del>', '<C-o>dw', { noremap = true, silent = tr
 
 -- Nvim command to close everything
 vim.api.nvim_create_user_command('Shutdown', function()
-  vim.cmd('tabnew')
-  vim.cmd('tabonly')
-  vim.cmd('quit')
+    vim.cmd('tabnew')
+    vim.cmd('tabonly')
+    vim.cmd('q!')
 end, {})
-
