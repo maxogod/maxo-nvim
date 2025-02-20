@@ -10,6 +10,9 @@ require("nvim-tree").setup({
     -- Show hidden files
     filters = { dotfiles = false },
 
+    -- Show git ignored files
+    git = { ignore = false },
+
     -- Disable netrw (vim's file explorer)
     disable_netrw = true,
     hijack_netrw = true,
