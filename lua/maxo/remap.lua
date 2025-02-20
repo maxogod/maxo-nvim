@@ -68,6 +68,10 @@ vim.api.nvim_set_keymap('v', '<leader>/', ':Commentary<CR>', { noremap = true, s
 -- create tab
 vim.keymap.set('n', '<leader>t', ':tabnew<CR>')
 
+-- Remove entire word
+vim.api.nvim_set_keymap('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-Del>', '<C-o>dw', { noremap = true, silent = true })
+
 -- Nvim command to close everything
 vim.api.nvim_create_user_command('Shutdown', function()
   vim.cmd('tabnew')
