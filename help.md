@@ -10,12 +10,13 @@
 
 ### File browsing
 
-* `<C>p` - Find them FAST!
+* `<Ctrl>p` - Find them FAST!
 * `<leader>fg` - Search file by words in them! (live grep)
 * `<leader>e` - Toggle your file-tree (a/d/r to add/del/rename files).
 * `<leader><number>` - Switch to that tab.
 * `<Alt><Left/Right>` - Move between tabs.
 * `<leader>t` - New tab.
+* `/<pattern>` + `n/N` - Find a pattern then move to next/prev.
 
 ### Fast editing
 
@@ -36,9 +37,9 @@
 ### Details & Info
 
 * `<leader>gd` - Go to definition.
-* `<C>i` - See doc of an object/fn/var/etc.
-* `<C>e` - Expand error message.
-* `<C>r` - See code refs to an object/fn/var/etc.
+* `<Ctrl>i` - See doc of an object/fn/var/etc.
+* `<Ctrl>e` - Expand error message.
+* `<Ctrl>r` - See code refs to an object/fn/var/etc.
 * `[d / ]d` - Prev/Next diagnostic.
 
 ### LSP
