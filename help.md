@@ -33,6 +33,7 @@
 * `<Ctrl><Sft><Up/Down>` - Duplicate line.
 * `<Alt><Sft><Up/Down>` - Create multicursor (batch edit, oh yeah).
 * `<Ctrl>n` - Select next match for this selection (with multicursor).
+* `select + <Tab>/<Shift><Tab>` - Indent/Unindent selection
 
 ### Details & Info
 
