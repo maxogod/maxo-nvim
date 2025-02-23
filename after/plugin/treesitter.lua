@@ -3,6 +3,7 @@ require 'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "javascript",
         "typescript",
+        "tsx",
         "c",
         "lua",
         "rust",
@@ -31,10 +32,4 @@ require 'nvim-treesitter.configs'.setup {
     indent = {
         enable = true,
     },
-
-    rainbow = {
-        enable = true,        -- Enable rainbow brackets
-        extended_mode = true, -- Enable rainbow for more bracket types
-        max_file_lines = 1000,
-    }
 }
