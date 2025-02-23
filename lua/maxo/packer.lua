@@ -46,7 +46,8 @@ return require('packer').startup(function(use)
     use 'jiangmiao/auto-pairs'
 
     -- rainbow brackets (needs tree-sitter)
-    use 'p00f/nvim-ts-rainbow'
+    -- use 'p00f/nvim-ts-rainbow' -- Deprecated
+    use { 'HiPhish/rainbow-delimiters.nvim' }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
