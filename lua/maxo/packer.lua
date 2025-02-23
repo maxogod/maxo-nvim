@@ -45,6 +45,9 @@ return require('packer').startup(function(use)
     -- Autoclosing brackets
     use 'jiangmiao/auto-pairs'
 
+    -- Autoclosing tags
+    use 'windwp/nvim-ts-autotag'
+
     -- rainbow brackets (needs tree-sitter)
     -- use 'p00f/nvim-ts-rainbow' -- Deprecated
     use { 'HiPhish/rainbow-delimiters.nvim' }
