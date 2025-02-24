@@ -53,12 +53,7 @@ return require('packer').startup(function(use)
     use { 'HiPhish/rainbow-delimiters.nvim' }
 
     -- Wrap selection around character (like "")
-    use {
-        "kylechui/nvim-surround",
-        config = function()
-            require("nvim-surround").setup({})
-        end
-    }
+    use { "kylechui/nvim-surround" }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
