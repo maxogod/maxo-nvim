@@ -82,3 +82,4 @@ vim.api.nvim_create_user_command('Shutdown', function()
     vim.cmd('tabonly')
     vim.cmd('q!')
 end, {})
+

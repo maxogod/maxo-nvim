@@ -48,9 +48,17 @@ return require('packer').startup(function(use)
     -- Autoclosing tags
     use 'windwp/nvim-ts-autotag'
 
-    -- rainbow brackets (needs tree-sitter)
+    -- Rainbow brackets (needs tree-sitter)
     -- use 'p00f/nvim-ts-rainbow' -- Deprecated
     use { 'HiPhish/rainbow-delimiters.nvim' }
+
+    -- Wrap selection around character (like "")
+    use {
+        "kylechui/nvim-surround",
+        config = function()
+            require("nvim-surround").setup({})
+        end
+    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
