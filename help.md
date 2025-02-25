@@ -28,6 +28,7 @@
 
 * `<leader>f` - Format current file.
 * `<leader>/` - Comment block.
+* `<leader>rn` - Refactor symbol.
 
 * `<Alt><Up/Down>` - Move a line up n' down!
 * `<Ctrl><Sft><Up/Down>` - Duplicate line.

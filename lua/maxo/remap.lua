@@ -76,6 +76,9 @@ vim.api.nvim_set_keymap('i', '<C-Del>', '<C-o>dw', { noremap = true, silent = tr
 vim.api.nvim_set_keymap('v', '<Tab>', '>gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
 
+-- Refactor
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
+
 -- Nvim command to close everything
 vim.api.nvim_create_user_command('Shutdown', function()
     vim.cmd('tabnew')
