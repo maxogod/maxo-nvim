@@ -25,3 +25,7 @@ vim.opt.termguicolors = true
 -- time after which the CursorHold autocommand is triggered
 vim.opt.updatetime = 50
 
+-- Make find (/<str>) case insensitive
+vim.o.ignorecase = true
+vim.o.smartcase = true
+

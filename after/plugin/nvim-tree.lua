@@ -51,6 +51,8 @@ require("nvim-tree").setup({
         open_file = {
             quit_on_open = false,
         },
+
+        use_system_clipboard = true,
     },
     on_attach = function(bufnr)
         local api = require("nvim-tree.api")
@@ -61,13 +63,17 @@ require("nvim-tree").setup({
 
         -- Remap Enter key to open file in a new tab
         vim.keymap.set("n", "<CR>", api.node.open.tab, opts("Open in New Tab"))
+
         vim.keymap.set("n", "a", api.fs.create, opts("Create File"))
         vim.keymap.set("n", "d", api.fs.remove, opts("Delete File"))
         vim.keymap.set("n", "r", api.fs.rename, opts("Rename File"))
+
+        vim.keymap.set("n", "Y", api.fs.copy.node, opts("Copy File"))
+        vim.keymap.set("n", "X", api.fs.cut, opts("Cut (Move) File"))
+        vim.keymap.set("n", "p", api.fs.paste, opts("Paste File"))
     end,
 })
 
 require('nvim-web-devicons').setup {
     default = true, -- enable default icons globally
 }
-
