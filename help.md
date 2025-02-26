@@ -20,6 +20,9 @@
 
 ### Fast editing
 
+* `<Ctrl>s` - Save current file changes (just :w).
+* `<Ctrl><Alt>s` - Save all open files' changes (just :wa).
+
 * `<leader>y` - Copy to clipboard.
 * `<leader>x` - Cut and copy to clipboard.
 
