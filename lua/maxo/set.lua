@@ -29,9 +29,22 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Format on save
+vim.g.format_on_save = true
+
+function ToggleFormatOnSave()
+    vim.g.format_on_save = not vim.g.format_on_save
+    if vim.g.format_on_save then
+        print("Format on Save: Enabled")
+    else
+        print("Format on Save: Disabled")
+    end
+end
+
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
     callback = function()
-        vim.lsp.buf.format()
+        if vim.g.format_on_save then
+            vim.lsp.buf.format()
+        end
     end,
 })

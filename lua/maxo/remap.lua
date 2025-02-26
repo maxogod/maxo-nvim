@@ -83,6 +83,9 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
 vim.keymap.set("n", "<C-s>", ":w<CR>")
 vim.keymap.set("n", "<C-A-s>", ":wa<CR>")
 
+-- Format on Save
+vim.api.nvim_set_keymap("n", "<leader>tf", ":lua ToggleFormatOnSave()<CR>", { noremap = true, silent = true })
+
 -- Nvim command to close everything
 vim.api.nvim_create_user_command('Shutdown', function()
     vim.cmd('tabnew')

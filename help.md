@@ -22,6 +22,7 @@
 
 * `<Ctrl>s` - Save current file changes (just :w).
 * `<Ctrl><Alt>s` - Save all open files' changes (just :wa).
+* `<leader>tf` - Toggle format on save.
 
 * `<leader>y` - Copy to clipboard.
 * `<leader>x` - Cut and copy to clipboard.
