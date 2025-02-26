@@ -57,6 +57,8 @@ end
 -- Duplicate the current line
 vim.keymap.set("n", "<C-S-Up>", "yyp")
 vim.keymap.set("n", "<C-S-Down>", "yyp")
+vim.keymap.set("v", "<C-S-Up>", ":t'>p<CR>")
+vim.keymap.set("v", "<C-S-Down>", ":t'>p<CR>")
 
 -- Multicursor
 vim.keymap.set('n', '<A-S-Up>', '<Plug>(VM-Add-Cursor-Up)', { desc = "Add cursor up" })
