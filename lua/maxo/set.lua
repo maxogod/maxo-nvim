@@ -1,4 +1,3 @@
-
 -- line numbers
 vim.opt.nu = true
 
@@ -15,11 +14,11 @@ vim.opt.smartindent = true
 -- wrapping
 vim.opt.wrap = false
 
--- search settings      
+-- search settings
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
--- allow 24-bit colors  
+-- allow 24-bit colors
 vim.opt.termguicolors = true
 
 -- time after which the CursorHold autocommand is triggered
@@ -29,3 +28,10 @@ vim.opt.updatetime = 50
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*",
+    callback = function()
+        vim.lsp.buf.format()
+    end,
+})
