@@ -40,6 +40,8 @@
 * `<Ctrl>n` - Select next match for this selection (with multicursor).
 * `select + <Tab>/<Shift><Tab>` - Indent/Unindent selection
 * `select + S<char>` - Wrap code around <char> (like S" for "example")
+* `<Shift>d` - Delete current line (normal mode).
+* `<Enter><Enter>` - Append \n to current line (normal mode).
 
 ### Details & Info
 
