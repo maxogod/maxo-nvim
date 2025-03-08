@@ -29,4 +29,5 @@ You will need to install the following packages for all the features to work pro
 
 * tree-sitter-cli
 * ripgrep
+* xclip (or other clipboard provider)
 
