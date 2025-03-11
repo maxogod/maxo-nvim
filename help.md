@@ -19,6 +19,7 @@
 ### File browsing
 
 * `<Ctrl>p` - Find them FAST!
+    - `<Enter> / <Ctrl>v` - [Enter -> new tab], [Ctrl+v -> vsplit].
 * `<leader>fg` - Search file by words in them! (live grep)
 * `<leader>e` - Toggle your file-tree (a/d/r to add/del/rename files).
 * `<leader><number>` - Switch to that tab.
