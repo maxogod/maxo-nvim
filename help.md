@@ -17,6 +17,11 @@
 * `<Alt><Left/Right>` - Move between tabs.
 * `<leader>t` - New tab.
 * `/<pattern>` + `n/N` - Find a pattern then move to next/prev.
+* `a` - Add file/dir.
+* `d` - Delete file/dir.
+* `<Shift>Y` - Copy file.
+* `<Shift>X` - Move file.
+* `p` - Paste file in path.
 
 ### Fast editing
 
