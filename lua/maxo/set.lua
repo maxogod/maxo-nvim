@@ -48,3 +48,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         end
     end,
 })
+
+-- folding
+vim.o.foldmethod = 'indent'
+vim.o.foldlevel = 99
+

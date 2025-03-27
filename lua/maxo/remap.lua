@@ -100,3 +100,10 @@ vim.api.nvim_create_user_command('Shutdown', function()
     vim.cmd('tabonly')
     vim.cmd('q!')
 end, {})
+
+-- Folding
+vim.api.nvim_set_keymap('n', '<C-A-k>', 'zM', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-A-l>', 'zR', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', 'zc', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', 'zo', { noremap = true, silent = true })
+
