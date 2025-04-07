@@ -39,34 +39,52 @@ lsp.on_attach(function(_, bufnr)
         vim.cmd("vsplit")
         vim.lsp.buf.definition()
     end, opts)
-    vim.keymap.set("n", "<C-i>", function() vim.lsp.buf.hover() end, opts)    -- description
+    -- vim.keymap.set("n", "<C-i>", function() vim.lsp.buf.hover() end, opts)         -- description
+    vim.keymap.set("n", "<C-i>", function()
+        local saga_hover = require("lspsaga.hover")
+        saga_hover:render_hover_doc()
+    end, opts)
     vim.keymap.set("n", "<C-e>", function() vim.diagnostic.open_float() end, opts) -- diagnostics
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts) -- go to next diagnostic
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)     -- go to next diagnostic
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set("n", "<C-r>", function() vim.lsp.buf.references() end, opts) -- code references
+    vim.keymap.set("n", "<C-r>", function() vim.lsp.buf.references() end, opts)    -- code references
 end)
 
 lsp.setup()
 
 vim.diagnostic.config({
-    vim.diagnostic.config({
-        virtual_text = {
-            prefix = '●', -- Choose a character for the virtual text
-            source = true, -- Show the source of the diagnostic
-            severity = vim.diagnostic.severity.INFO, -- Show severity level
-        },
-        float = {
-            border = 'rounded', -- Use rounded borders for floating windows
-            source = true,    -- Always show the source in the floating window
-            header = '',      -- Optional: remove header text
-            scope = 'cursor', -- Only show diagnostics at the cursor
-            max_width = 80,   -- Control maximum width for the floating window (set this according to your preference)
-            wrap = true,      -- Enable wrapping of long lines in the floating window
-        },
-        signs = true,         -- Keep diagnostic signs on the left of the text
-        underline = true,     -- Underline diagnostics
-        update_in_insert = false, -- Disable diagnostic updates during insert mode
-        severity_sort = true, -- Sort diagnostics by severity level
-    })
+    virtual_text = {
+        prefix = '●',
+        source = true,
+        severity = vim.diagnostic.severity.INFO,
+    },
+    float = {
+        border = 'rounded',
+        source = true,
+        header = '',
+        scope = 'cursor',
+        max_width = 80,
+        wrap = true,
+    },
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
+})
 
+require("lspsaga").setup({
+    ui = {
+        border = "rounded",
+    },
+    hover = {
+        max_width = 80,
+        max_height = 30,
+    },
+    lightbulb = {
+        enable = false,
+    },
+    scroll_preview = {
+        scroll_down = "<C-f>",
+        scroll_up = "<C-b>",
+    },
 })
