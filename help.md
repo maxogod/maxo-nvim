@@ -63,6 +63,7 @@
 ### LSP
 
 * `:Mason` - Opens the lsp catalog, install what you need bro!
+* `<leader>lr` - Reload LSP.
 
 ### Git
 

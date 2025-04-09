@@ -107,3 +107,5 @@ vim.api.nvim_set_keymap('n', '<C-A-l>', 'zR', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', 'zc', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', 'zo', { noremap = true, silent = true })
 
+-- Refresh LSP
+vim.api.nvim_set_keymap('n', '<leader>lr', ':LspRestart<CR>', { noremap = true, silent = true })
