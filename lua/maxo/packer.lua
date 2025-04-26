@@ -87,4 +87,11 @@ return require('packer').startup(function(use)
         "nvimdev/lspsaga.nvim",
         after = "nvim-lspconfig",
     })
+
+    use {
+        'nvim-pack/nvim-spectre',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    }
 end)

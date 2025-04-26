@@ -42,6 +42,7 @@
 * `<leader>f` - Format current file.
 * `<leader>/` - Comment block.
 * `<leader>rn` - Refactor symbol.
+* `<leader>fr` - Find and replace (`<leader>R | <leader>rc` for saving)
 
 * `<Alt><Up/Down>` - Move a line up n' down!
 * `<Ctrl><Sft><Up/Down>` - Duplicate line.
@@ -51,6 +52,7 @@
 * `select + S<char>` - Wrap code around <char> (like S" for "example")
 * `<Shift>d` - Delete current line (normal mode).
 * `<Enter><Enter>` - Append \n to current line (normal mode).
+
 
 ### Details & Info
 

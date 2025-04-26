@@ -109,3 +109,8 @@ vim.api.nvim_set_keymap('n', '<C-l>', 'zo', { noremap = true, silent = true })
 
 -- Refresh LSP
 vim.api.nvim_set_keymap('n', '<leader>lr', ':LspRestart<CR>', { noremap = true, silent = true })
+
+-- Find & Replace
+vim.keymap.set('n', '<leader>fr', '<cmd>lua require("spectre").toggle()<CR>', {
+    desc = "Toggle Spectre"
+})
