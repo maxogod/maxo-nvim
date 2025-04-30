@@ -16,8 +16,8 @@ return require('packer').startup(function(use)
         lazy = false,
         priority = 1000,
         config = function()
-            vim.g.tokyonight_style = "night" -- "night", "storm", "moon", "day"
-            vim.cmd [[colorscheme tokyonight]]
+            vim.g.tokyonight_flavour = "night" -- options: "storm", "night", "moon", "day"
+            vim.cmd.colorscheme("tokyonight-night")
         end
     }
 
