@@ -31,6 +31,7 @@
 
 * `<Ctrl>s` - Save current file changes (just :w).
 * `<Ctrl><Alt>s` - Save all open files' changes (just :wa).
+* `<Ctrl>a` - Select all current buffer.
 * `<leader>tf` - Toggle format on save.
 
 * `<leader>y` - Copy to clipboard.

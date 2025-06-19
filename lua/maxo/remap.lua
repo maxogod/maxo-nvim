@@ -114,3 +114,6 @@ vim.api.nvim_set_keymap('n', '<leader>lr', ':LspRestart<CR>', { noremap = true, 
 vim.keymap.set('n', '<leader>fr', '<cmd>lua require("spectre").toggle()<CR>', {
     desc = "Toggle Spectre"
 })
+
+-- Select all
+vim.keymap.set('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
