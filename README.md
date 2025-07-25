@@ -27,7 +27,7 @@ source ~/.bashrc
 
 You will need to install the following packages for all the features to work properly:
 
-* tree-sitter-cli
-* ripgrep
-* xclip (or other clipboard provider)
+* tree-sitter-cli [`npm install -g tree-sitter-cli`]
+* ripgrep [`sudo apt install -y ripgrep`]
+* xclip (or other clipboard provider) [`sudo apt install -y xclip`]
 
