@@ -41,6 +41,7 @@
 * `<Ctrl>y` - Redo.
 
 * `<leader>f` - Format current file.
+* `select + <Sft>u | u` to uppercase or lowercase selection (visual mode)
 * `<leader>/` - Comment block.
 * `<leader>rn` - Refactor symbol.
 * `<leader>fr` - Find and replace (`<leader>R | <leader>rc` for saving)
