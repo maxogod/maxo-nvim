@@ -50,6 +50,23 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<C-r>", function() vim.lsp.buf.references() end, opts)    -- code references
 end)
 
+lsp.configure("ltex", {
+    filetypes = { "latex", "tex" },
+    settings = {
+        ltex = {
+            language = "es",
+            additionalRules = {
+                motherTongue = "es",
+                enabled = { "es", "en-US" }
+            },
+            dictionary = {},
+            disabledRules = {
+                ["es"] = {},
+            },
+        }
+    }
+})
+
 lsp.setup()
 
 vim.diagnostic.config({
@@ -88,3 +105,4 @@ require("lspsaga").setup({
         scroll_up = "<C-b>",
     },
 })
+
