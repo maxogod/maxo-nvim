@@ -50,6 +50,14 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<C-r>", function() vim.lsp.buf.references() end, opts)    -- code references
 end)
 
+lsp.configure("omnisharp", {
+    cmd = { "/home/maxo/.local/share/nvim/mason/bin/OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+    root_dir = require('lspconfig.util').root_pattern("*.sln", "*.csproj"),
+    enable_roslyn_analyzers = true,
+    enable_import_completion = true,
+    organize_imports_on_format = true,
+})
+
 lsp.configure("ltex", {
     filetypes = { "latex", "tex" },
     settings = {
@@ -105,4 +113,3 @@ require("lspsaga").setup({
         scroll_up = "<C-b>",
     },
 })
-
