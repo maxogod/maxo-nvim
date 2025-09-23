@@ -117,3 +117,8 @@ vim.keymap.set('n', '<leader>fr', '<cmd>lua require("spectre").toggle()<CR>', {
 
 -- Select all
 vim.keymap.set('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
+
+-- Background toggle
+vim.keymap.set("n", "<leader>bg", function()
+    ToggleBackground()
+end, { desc = "Toggle background transparency" })

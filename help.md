@@ -63,6 +63,7 @@
 * `<Ctrl>e` - Expand error message.
 * `<Ctrl>r` - See code refs to an object/fn/var/etc.
 * `[d / ]d` - Prev/Next diagnostic.
+* `<leader>bg` - Toggle background filling
 
 ### LSP
 
