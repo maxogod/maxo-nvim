@@ -8,7 +8,7 @@ function ToggleBackground()
     if background_removed then
         -- Re-add backgrounds (reset to defaults or your chosen values)
         vim.cmd [[
-      highlight Normal guibg=NONE ctermbg=NONE
+      highlight Normal guibg=#1a1b26 ctermbg=NONE
       highlight NvimTreeNormal guibg=#1a1b26 ctermbg=NONE
       highlight NvimTreeNormalNC guibg=#1a1b26 ctermbg=NONE
       highlight NvimTreeEndOfBuffer guibg=#1a1b26 guifg=#1a1b26
