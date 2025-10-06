@@ -122,3 +122,6 @@ vim.keymap.set('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>bg", function()
     ToggleBackground()
 end, { desc = "Toggle background transparency" })
+
+-- Git blame
+vim.api.nvim_set_keymap('n', '<leader>gb', ':GitBlameToggle<CR>', { noremap = true, silent = true })

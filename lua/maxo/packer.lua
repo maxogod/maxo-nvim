@@ -84,10 +84,21 @@ return require('packer').startup(function(use)
         after = "nvim-lspconfig",
     })
 
+    -- Search and Replace Plugin
     use {
         'nvim-pack/nvim-spectre',
         requires = {
             'nvim-lua/plenary.nvim'
         }
+    }
+
+    -- Git Blame Plugin
+    use {
+        'f-person/git-blame.nvim',
+        config = function()
+            vim.g.gitblame_enabled = 0
+            vim.g.gitblame_message_template = '<author> | <date> | <sha>'
+            vim.g.gitblame_highlight_group = 'Comment'
+        end
     }
 end)

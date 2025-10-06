@@ -64,6 +64,7 @@
 * `<Ctrl>r` - See code refs to an object/fn/var/etc.
 * `[d / ]d` - Prev/Next diagnostic.
 * `<leader>bg` - Toggle background filling
+* `<leader>gb` - Toggle git blame
 
 ### LSP
 
