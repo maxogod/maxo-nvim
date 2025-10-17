@@ -54,6 +54,7 @@
 * `select + S<char>` - Wrap code around <char> (like S" for "example")
 * `<Shift>d` - Delete current line (normal mode).
 * `<Enter><Enter>` - Append \n to current line (normal mode).
+* `:%s/old/new/g` - Replace all old with new (in file)
 
 
 ### Details & Info
