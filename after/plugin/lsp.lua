@@ -50,6 +50,14 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<C-r>", function() vim.lsp.buf.references() end, opts)    -- code references
 end)
 
+-- Unity LSP --
+vim.filetype.add({
+    extension = {
+        uss = 'css',
+        uxml = 'xml',
+    },
+})
+
 lsp.configure("omnisharp", {
     cmd = { "/home/maxo/.local/share/nvim/mason/bin/OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
     root_dir = require('lspconfig.util').root_pattern("*.sln", "*.csproj"),
@@ -57,6 +65,15 @@ lsp.configure("omnisharp", {
     enable_import_completion = true,
     organize_imports_on_format = true,
 })
+
+lsp.configure("cssls", {
+    filetypes = { "css", "scss", "less" },
+})
+
+lsp.configure("lemminx", {
+    filetypes = { "xml", "xsd", "xsl", "xslt", "svg" },
+})
+-- --
 
 lsp.configure("ltex", {
     filetypes = { "latex", "tex" },
