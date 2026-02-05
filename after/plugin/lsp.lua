@@ -39,6 +39,12 @@ lsp.on_attach(function(_, bufnr)
         vim.cmd("vsplit")
         vim.lsp.buf.definition()
     end, opts)
+
+    -- go to implementation
+    vim.keymap.set("n", "<leader>gi", function()
+        vim.lsp.buf.implementation()
+    end, opts)
+
     -- vim.keymap.set("n", "<C-i>", function() vim.lsp.buf.hover() end, opts)         -- description
     vim.keymap.set("n", "<C-i>", function()
         local saga_hover = require("lspsaga.hover")
