@@ -125,3 +125,6 @@ end, { desc = "Toggle background transparency" })
 
 -- Git blame
 vim.api.nvim_set_keymap('n', '<leader>gb', ':GitBlameToggle<CR>', { noremap = true, silent = true })
+
+-- Close buffer
+vim.keymap.set('n', '<C-w>', '<Cmd>q<CR>', { silent = true })
