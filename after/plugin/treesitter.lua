@@ -1,3 +1,12 @@
+-- Neovim 0.12: some captures are lists; normalize to a single node for get_node_text.
+local get_node_text = vim.treesitter.get_node_text
+vim.treesitter.get_node_text = function(node, source, opts)
+    if type(node) == "table" then
+        node = node[#node] or node[1]
+    end
+    return get_node_text(node, source, opts)
+end
+
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
     ensure_installed = {
