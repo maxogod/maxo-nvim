@@ -108,7 +108,15 @@ vim.api.nvim_set_keymap('n', '<C-k>', 'zc', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', 'zo', { noremap = true, silent = true })
 
 -- Refresh LSP
-vim.api.nvim_set_keymap('n', '<leader>lr', ':LspRestart<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>lr", function()
+  for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+    client:stop(true)
+  end
+
+  vim.defer_fn(function()
+    vim.cmd("edit")
+  end, 500)
+end, { noremap = true, silent = true, desc = "Hard restart LSP" })
 
 -- Find & Replace
 vim.keymap.set('n', '<leader>fr', '<cmd>lua require("spectre").toggle()<CR>', {

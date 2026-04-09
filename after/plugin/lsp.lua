@@ -76,10 +76,17 @@ lsp.configure("cssls", {
     filetypes = { "css", "scss", "less" },
 })
 
+lsp.configure("gopls", {
+    settings = {
+        gopls = {
+            semanticTokens = true,
+        },
+    },
+})
+
 lsp.configure("lemminx", {
     filetypes = { "xml", "xsd", "xsl", "xslt", "svg" },
 })
--- --
 
 lsp.configure("ltex", {
     filetypes = { "latex", "tex" },
@@ -96,6 +103,35 @@ lsp.configure("ltex", {
             },
         }
     }
+})
+
+local lspconfig = require("lspconfig")
+local cmp_lsp = require("cmp_nvim_lsp")
+
+local capabilities = cmp_lsp.default_capabilities()
+
+capabilities.textDocument.semanticTokens = {
+    dynamicRegistration = false,
+    requests = {
+        range = true,
+        full = {
+            delta = true,
+        },
+    },
+    tokenTypes = {},
+    tokenModifiers = {},
+    formats = { "relative" },
+    overlappingTokenSupport = true,
+    multilineTokenSupport = true,
+}
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "typescriptreact", "javascriptreact" },
+  callback = function()
+    vim.schedule(function()
+      vim.treesitter.start(0, "tsx")
+    end)
+  end,
 })
 
 lsp.setup()
