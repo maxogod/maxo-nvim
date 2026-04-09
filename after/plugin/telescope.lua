@@ -32,5 +32,16 @@ vim.keymap.set('n', '<C-p>', function()
         end
     })
 end, { desc = 'Telescope find files (new tab / vsplit)' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fg', function()
+    local actions = require('telescope.actions')
+
+    builtin.live_grep({
+        attach_mappings = function()
+            actions.select_default:replace(function(prompt_bufnr)
+                actions.select_tab(prompt_bufnr)
+            end)
+            return true
+        end,
+    })
+end, { desc = 'Telescope live grep (new tab)' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
