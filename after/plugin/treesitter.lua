@@ -7,7 +7,7 @@ vim.treesitter.get_node_text = function(node, source, opts)
     return get_node_text(node, source, opts)
 end
 
-require 'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.config'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
     ensure_installed = {
         "javascript",
