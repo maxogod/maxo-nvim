@@ -14,6 +14,39 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ["<C-Space>"] = cmp.mapping.complete(),
 })
 
+local function goto_tab(method, fallback_method)
+    local client = vim.lsp.get_clients({ bufnr = 0 })[1]
+    if not client then return end
+    local params = vim.lsp.util.make_position_params(0, client.offset_encoding)
+    vim.lsp.buf_request(0, method, params, function(err, result)
+        local empty = not result or (vim.islist(result) and #result == 0)
+        if (err or empty) and fallback_method then
+            goto_tab(fallback_method, nil)
+            return
+        end
+        if err or empty then return end
+
+        local location = vim.islist(result) and result[1] or result
+        local uri = location.targetUri or location.uri
+        local range = location.targetSelectionRange or location.targetRange or location.range
+
+        if not uri or not range then
+            if fallback_method then goto_tab(fallback_method, nil) end
+            return
+        end
+
+        local bufnr = vim.uri_to_bufnr(uri)
+        local current_buf = vim.api.nvim_get_current_buf()
+
+        if bufnr ~= current_buf then
+            vim.cmd("tabnew")
+            vim.api.nvim_set_current_buf(bufnr)
+        end
+
+        vim.api.nvim_win_set_cursor(0, { range.start.line + 1, range.start.character })
+    end)
+end
+
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
@@ -36,13 +69,12 @@ lsp.on_attach(function(_, bufnr)
 
     -- go to definition
     vim.keymap.set("n", "gd", function()
-        vim.cmd("vsplit")
-        vim.lsp.buf.definition()
+        goto_tab("textDocument/definition")
     end, opts)
 
     -- go to implementation
     vim.keymap.set("n", "<leader>gi", function()
-        vim.lsp.buf.implementation()
+        goto_tab("textDocument/implementation", "textDocument/definition")
     end, opts)
 
     -- vim.keymap.set("n", "<C-i>", function() vim.lsp.buf.hover() end, opts)         -- description
@@ -126,12 +158,12 @@ capabilities.textDocument.semanticTokens = {
 }
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "typescriptreact", "javascriptreact" },
-  callback = function()
-    vim.schedule(function()
-      vim.treesitter.start(0, "tsx")
-    end)
-  end,
+    pattern = { "typescriptreact", "javascriptreact" },
+    callback = function()
+        vim.schedule(function()
+            vim.treesitter.start(0, "tsx")
+        end)
+    end,
 })
 
 lsp.setup()
