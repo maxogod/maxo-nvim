@@ -53,3 +53,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.o.foldmethod = 'indent'
 vim.o.foldlevel = 99
 
+-- Unset swap file creation
+vim.opt.swapfile = false
