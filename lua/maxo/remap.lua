@@ -146,6 +146,7 @@ vim.keymap.set('n', 'c2', 'zMzv', { silent = true }) -- collapse all except curr
 vim.keymap.set('n', 'c3', 'zM', { silent = true })   -- collapse all
 
 -- Expand
-vim.keymap.set('n', 'x1', 'zo', { silent = true }) -- expand current fold
+vim.keymap.set('n', 'x0', 'zo', { silent = true }) -- expand current fold
+vim.keymap.set('n', 'x1', 'zO', { silent = true }) -- expand current fold + all subfolds
 vim.keymap.set('n', 'x2', 'zr', { silent = true }) -- expand one level
 vim.keymap.set('n', 'x3', 'zR', { silent = true }) -- expand all
