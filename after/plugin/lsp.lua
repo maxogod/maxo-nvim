@@ -120,19 +120,17 @@ lsp.configure("lemminx", {
     filetypes = { "xml", "xsd", "xsl", "xslt", "svg" },
 })
 
+
+-- Mason: ltex-ls, tex-lab
 lsp.configure("ltex", {
-    filetypes = { "latex", "tex" },
+    -- Added 'plaintex' just in case
+    filetypes = { "latex", "tex", "plaintex", "markdown", "text" },
+    root_dir = require('lspconfig.util').find_git_ancestor or
+        require('lspconfig.util').path.dirname,
     settings = {
         ltex = {
             language = "es",
-            additionalRules = {
-                motherTongue = "es",
-                enabled = { "es", "en-US" }
-            },
-            dictionary = {},
-            disabledRules = {
-                ["es"] = {},
-            },
+            enabled = { "latex", "tex", "plaintex", "markdown", "text" },
         }
     }
 })
@@ -154,6 +152,7 @@ capabilities.textDocument.semanticTokens = {
     tokenModifiers = {},
     formats = { "relative" },
     overlappingTokenSupport = true,
+
     multilineTokenSupport = true,
 }
 
