@@ -1,4 +1,4 @@
-# MaxoNvim
+# MaxoNvim - Config
 
 My config for my nvim text editor! B)
 
