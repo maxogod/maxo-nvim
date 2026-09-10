@@ -1,2 +1,2 @@
-packer_compiled.lua
-plugin/packer_compiled.lua
+# lazy.nvim keeps plugin state outside the repo; only the lockfile is tracked.
+.luarc.json
