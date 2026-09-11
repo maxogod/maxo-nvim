@@ -48,4 +48,9 @@ vim.g.transparent_background = true
 -- Diff format
 vim.opt.diffopt:append("vertical")
 
+-- Activate sign column used for git diff indicator
 vim.opt.signcolumn = "yes"
+
+-- highlight on text search
+vim.opt.hlsearch = true
+vim.opt.incsearch = true

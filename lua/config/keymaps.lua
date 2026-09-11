@@ -14,6 +14,7 @@ map("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 
 map("n", "n", "nzzzv", { desc = "Next match, centred" })
 map("n", "N", "Nzzzv", { desc = "Previous match, centred" })
+map("n", "<Esc>", "<Cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
 map("n", "Q", "<nop>")
 

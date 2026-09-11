@@ -20,7 +20,7 @@
 * `<leader>fb` - Jump to an open buffer.
 * `<leader>fh` - Search Neovim's own help pages.
 * `<leader>fr` - Find & replace across the whole project (Spectre).
-* `/<pattern>` then `n` / `N` - Find a pattern, jump next/prev (screen stays centred).
+* `/<pattern>` then `n` / `N` - Find a pattern, jump next/prev. Use \c or \C for case sensitivity.
 * `gx` - Open the file path or URL under the cursor in your system handler.
 
 ## Tabs & windows
