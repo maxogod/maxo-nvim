@@ -1,2 +1,3 @@
 # lazy.nvim keeps plugin state outside the repo; only the lockfile is tracked.
 .luarc.json
+local_settings.json
