@@ -116,7 +116,7 @@ HTML/JSX tags auto-close and auto-rename their pair.
 ## Completion (blink.cmp)
 
 * `<Up>` / `<Down>` - Previous / next suggestion.
-* `<Enter>` - Accept the selected suggestion.
+* `<Tab>` - Accept the selected suggestion.
 * `<Esc>` - Dismiss the menu.
 * `<Ctrl><Space>` - Force the menu open / toggle the docs window.
 * `<Ctrl><Up>` / `<Ctrl><Down>` - Scroll the documentation window.

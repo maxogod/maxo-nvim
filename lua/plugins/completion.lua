@@ -10,7 +10,7 @@ return {
                 preset = "none",
                 ["<Down>"] = { "select_next", "fallback" },
                 ["<Up>"] = { "select_prev", "fallback" },
-                ["<CR>"] = { "accept", "fallback" },
+                ["<Tab>"] = { "accept", "fallback" },
                 ["<Esc>"] = { "cancel", "fallback" },
                 ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
                 ["<C-Down>"] = { "scroll_documentation_down", "fallback" },
